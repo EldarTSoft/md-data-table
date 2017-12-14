@@ -1061,8 +1061,8 @@ function mdSelect($compile, $parse) {
       return isSelected ? element.addClass('md-selected') : element.removeClass('md-selected');
     });
 
-    scope.$watch(tableCtrl.enableMultiSelect, function (multiple) {
-      if(tableCtrl.$$rowSelect && !multiple) {
+    scope.$watch(tableCtrl.enableMultiSelect, function (multiplecustom) {
+      if(tableCtrl.$$rowSelect && !multiplecustom) {
         // remove all but the first selected item
         tableCtrl.selected.splice(1);
       }
@@ -1220,7 +1220,7 @@ function mdTable() {
     };
     
     self.enableMultiSelect = function () {
-      return $attrs.multiple === '' || $scope.$eval($attrs.multiple);
+      return $attrs.multiplecustom === '' || $scope.$eval($attrs.multiplecustom);
     };
     
     self.waitingOnPromise = function () {
